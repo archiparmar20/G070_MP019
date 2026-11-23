@@ -25,10 +25,10 @@ data_issues:
     present: false
     count: null          # number of EXTRA copies (rows you would delete)
   stuck_sensor:
-    present: null
+    present: false
     column: null
-    start_date: null       # first date with the stuck value, YYYY-MM-DD
-    end_date: null         # last date with the stuck value, YYYY-MM-DD
+    start_date: null
+    end_date: null       # last date with the stuck value, YYYY-MM-DD
   target_typos:
     present: true
     count: 14        # rows whose target was typed 10 times too big
