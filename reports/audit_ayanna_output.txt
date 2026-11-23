@@ -1,0 +1,67 @@
+train (1000, 12) later (300, 12) holdout (250, 10)
+== LEAKAGE ==
+Train columns (excl. target) missing from holdout: ['kwh_billed_in_app']
+kwh_billed_in_app: corr with energy_kwh = 0.2650
+  mean |diff| = 4.606 kWh, median |diff| = 0.320 kWh
+  within 1 kWh: 93.6% of rows
+  rows with likely target typos excluded from the check below: 14
+  corr excluding those rows = 0.9989
+  within 1 kWh excluding those rows: 94.9%
+  median |diff| excluding likely target typos: 0.310
+
+== DUPLICATES ==
+df.duplicated().sum() (extra copies, all columns): 0
+Duplicates ignoring record_id: 0
+Duplicated record_id values: 0
+
+== SPELLING VARIANTS ==
+
+-- vehicle (train, raw repr) --
+vehicle
+'three_wheeler'     325
+'two_wheeler'       303
+'car'               222
+'three_wheeler '     14
+'THREE_WHEELER'      12
+'two_wheeler '       11
+' two_wheeler'       11
+' three_wheeler'     10
+'three wheeler'      10
+'TWO_WHEELER'        10
+'Three_Wheeler'       9
+'Car'                 9
+'car '                9
+' car'                8
+'car.'                8
+'two wheeler'         7
+'two.'                7
+'thr.'                5
+'CAR'                 5
+'Two_Wheeler'         5
+clean categories in later.csv (3): ['car', 'three_wheeler', 'two_wheeler']
+wrong -> correct (rows):
+  'three_wheeler ' -> 'three_wheeler'  (14 rows)
+  ' three_wheeler' -> 'three_wheeler'  (10 rows)
+  'Three_Wheeler' -> 'three_wheeler'  (9 rows)
+  'Car' -> 'car'  (9 rows)
+  'two wheeler' -> 'two_wheeler'  (7 rows)
+  ' car' -> 'car'  (8 rows)
+  'THREE_WHEELER' -> 'three_wheeler'  (12 rows)
+  'thr.' -> 'three_wheeler'  (5 rows)
+  'two_wheeler ' -> 'two_wheeler'  (11 rows)
+  'three wheeler' -> 'three_wheeler'  (10 rows)
+  'CAR' -> 'car'  (5 rows)
+  'car.' -> 'car'  (8 rows)
+  'TWO_WHEELER' -> 'two_wheeler'  (10 rows)
+  ' two_wheeler' -> 'two_wheeler'  (11 rows)
+  'Two_Wheeler' -> 'two_wheeler'  (5 rows)
+  'car ' -> 'car'  (9 rows)
+  'two.' -> 'two_wheeler'  (7 rows)
+
+-- station_type (train, raw repr) --
+station_type
+'Residential'    382
+'Mall'           331
+'Highway'        287
+clean categories in later.csv (3): ['Highway', 'Mall', 'Residential']
+wrong -> correct (rows):
