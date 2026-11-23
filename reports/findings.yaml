@@ -12,15 +12,15 @@ data_issues:
     present: true
     column: kwh_billed_in_app         # the column that must not be used as a feature
   unit_mixup:
-    present: null
-    column: null           # the column recorded in a different unit
-    group_value: null      # the value of station_type whose rows are affected
-    factor: null           # wrong value = right value x factor
+    present: true
+    column: vehicle_age_yr
+    group_value: Mall
+    factor: 12        # wrong value = right value x factor
   sentinel_value:
-    present: null
-    column: null
-    value: null            # the special number typed instead of a blank
-    count: null            # how many rows have it
+    present: true
+    column: session_minutes
+    value: 9999
+    count: 33          # how many rows have it
   duplicate_rows:
     present: false
     count: null          # number of EXTRA copies (rows you would delete)
