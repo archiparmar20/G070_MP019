@@ -30,8 +30,8 @@ data_issues:
     start_date: null       # first date with the stuck value, YYYY-MM-DD
     end_date: null         # last date with the stuck value, YYYY-MM-DD
   target_typos:
-    present: null
-    count: null            # rows whose target was typed 10 times too big
+    present: true
+    count: 14        # rows whose target was typed 10 times too big
   spelling_variants:
     present: true
     column: vehicle
