@@ -9,8 +9,8 @@ data_issues:
   # For each of the 7 kinds: present: true or false.
   # If present is false, leave the other values as null.
   leaking_column:
-    present: null
-    column: null           # the column that must not be used as a feature
+    present: true
+    column: kwh_billed_in_app         # the column that must not be used as a feature
   unit_mixup:
     present: null
     column: null           # the column recorded in a different unit
@@ -22,8 +22,8 @@ data_issues:
     value: null            # the special number typed instead of a blank
     count: null            # how many rows have it
   duplicate_rows:
-    present: null
-    count: null            # number of EXTRA copies (rows you would delete)
+    present: false
+    count: null          # number of EXTRA copies (rows you would delete)
   stuck_sensor:
     present: null
     column: null
@@ -33,9 +33,9 @@ data_issues:
     present: null
     count: null            # rows whose target was typed 10 times too big
   spelling_variants:
-    present: null
-    column: null
-    true_levels: null      # how many real categories there are after cleaning
+    present: true
+    column: vehicle
+    true_levels: 3     # how many real categories there are after cleaning
 
 tracking:
   experiment_name: null
