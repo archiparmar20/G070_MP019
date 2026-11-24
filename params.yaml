@@ -1,21 +1,13 @@
+
 cleaning:
+
   vehicle_age:
-    station_type: "Mall"
+    station_type: Mall
     conversion_factor: 12
+
   session_minutes:
     sentinel_value: 9999
 
-model:
-  input_features:
-    - battery_start_pct
-    - session_minutes
-    - charger_kw
-    - temp_c
-    - vehicle_age_yr
-    - queue_before
-    - vehicle
-    - station_type
-  date_column: date
-  target_column: energy_kwh
-  leakage_columns:
-    - kwh_billed_in_app
+target_fix:
+  threshold: 110.485
+  factor: 10
