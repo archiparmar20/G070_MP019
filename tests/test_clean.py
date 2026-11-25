@@ -8,7 +8,8 @@ CONFIG = {
     "cleaning": {
         "vehicle_age": {"station_type": "Mall", "conversion_factor": 12},
         "session_minutes": {"sentinel_value": 9999},
-    }
+    },
+    "target_fix": {"threshold": 110.485, "factor": 10},
 }
 
 
